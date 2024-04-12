@@ -1,4 +1,3 @@
-
 const usersService = require('./users-service');
 const { errorResponder, errorTypes } = require('../../../core/errors');
 
@@ -134,13 +133,6 @@ async function changePassword(request, response, next) {
         'New password and confirmation do not match'
       );
     }
-
-    // if (await passwordMatch(id, oldPassword))) {
-    //   throw errorResponder(
-    //     errorTypes.UNAUTHORIZED,
-    //     'Current password is invalid'
-    //   );
-    // }
 
     const success = await usersService.changePassword(
       id,
